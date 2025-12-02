@@ -1,0 +1,254 @@
+/* Custom Styles for Sözen Soğutma Website */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Gradient Banner */
+.gradient-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 25%, #2563eb 75%, #1d4ed8 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-banner strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Logo Container Styles */
+.logo-container {
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+}
+
+.logo-container img {
+    /* Gölge kaldırıldı */
+}
+
+/* Gallery Item Hover Effects */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Product Item Hover Effects */
+.product-item {
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Card Hover Effects */
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #dc2626;
+}
+
+.service-card h3 {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: #ffffff;
+}
+
+/* Services Section Gradient Background */
+.services-gradient {
+    background: linear-gradient(to top, #991b1b 0%, #b91c1c 50%, #dc2626 100%);
+    padding-top: 4.5rem; /* 1.5x of py-12 (3rem) */
+    padding-bottom: 4.5rem;
+}
+
+@media (min-width: 768px) {
+    .services-gradient {
+        padding-top: 6rem; /* 1.5x of py-16 (4rem) */
+        padding-bottom: 6rem;
+    }
+}
+
+/* Service Card Red (for red background section) */
+.service-card-red {
+    background-color: transparent; /* No background color */
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent; /* Transparent border by default */
+}
+
+.service-card-red:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 1); /* White border 100% opacity on hover */
+}
+
+.service-card-red > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Card Title - White with 30% opacity */
+.service-title-white {
+    color: rgba(255, 255, 255, 0.3); /* White with 30% opacity */
+}
+
+/* Service Card Icons */
+.service-card-red img {
+    filter: brightness(0) invert(1); /* Make icons white */
+    transition: transform 0.3s ease;
+}
+
+.service-card-red:hover img {
+    transform: scale(1.1);
+}
+
+/* Typography Enhancements */
+h1, h2, h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Color Accents */
+.text-red-600 {
+    color: #dc2626;
+}
+
+.text-blue-600 {
+    color: #2563eb;
+}
+
+/* Responsive Image Handling */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Loading Animation for Images */
+img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Smooth Transitions */
+* {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Print Styles */
+@media print {
+    .gallery-item:hover,
+    .service-card:hover {
+        transform: none;
+    }
+    
+    .whatsapp-float {
+        display: none;
+    }
+}
+
